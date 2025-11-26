@@ -410,12 +410,14 @@ h1 {
   height: 150px;
   border-radius: 10px;
   background-image:
-    var(--card-art, linear-gradient(135deg, rgba(255, 138, 216, 0.32), rgba(77, 225, 255, 0.28))),
+    var(--card-accent-gradient, linear-gradient(135deg, rgba(255, 138, 216, 0.32), rgba(77, 225, 255, 0.28))),
+    linear-gradient(120deg, rgba(255, 255, 255, 0.15), transparent 40%),
     repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.12) 2px, transparent 2px, transparent 8px),
     repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.08) 2px, transparent 2px, transparent 8px),
-    linear-gradient(120deg, rgba(255, 255, 255, 0.15), transparent 40%),
-    var(--card-accent-gradient, linear-gradient(135deg, rgba(255, 138, 216, 0.32), rgba(77, 225, 255, 0.28)));
-  background-size: cover, cover, cover, cover, cover;
+    var(--card-art, linear-gradient(135deg, rgba(255, 138, 216, 0.32), rgba(77, 225, 255, 0.28)));
+  background-size: cover, cover, cover, cover, contain;
+  background-position: center;
+  background-repeat: no-repeat;
   border: 1px solid #26324b;
   overflow: hidden;
   box-shadow:

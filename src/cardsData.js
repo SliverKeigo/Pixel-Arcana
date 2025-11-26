@@ -119,5 +119,27 @@ export const cardPool = [
     accent: "#9bf4ff",
     accentGradient: "linear-gradient(140deg, rgba(155, 244, 255, 0.28), rgba(187, 168, 255, 0.24))",
     art: "/art/aurora-veil.svg"
+  },
+  {
+    id: "starlit-cascade",
+    name: "Starlit Cascade",
+    type: "spell",
+    cost: 3,
+    rarity: "rare",
+    effect: "Heal 4 to an ally and scry 2. If you control a spell, draw a card.",
+    accent: "#7ad0ff",
+    accentGradient: "linear-gradient(140deg, rgba(122, 208, 255, 0.3), rgba(99, 255, 210, 0.24))",
+    art: "/art/water-experiment.png"
+  },
+  {
+    id: "event-horizon",
+    name: "Event Horizon",
+    type: "spell",
+    cost: 4,
+    rarity: "legendary",
+    effect: "Exile a creature. If you control another spell, exile two instead.",
+    accent: "#ff8ad8",
+    accentGradient: "linear-gradient(140deg, rgba(255, 138, 216, 0.32), rgba(255, 184, 108, 0.26))",
+    art: "/art/space.png"
   }
 ];
