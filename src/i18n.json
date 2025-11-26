@@ -1,0 +1,40 @@
+{
+  "en": {
+    "title": "Neo Pixel Arcana",
+    "lede": "Deck up top, hand below. Hover a card to pull it to the front.",
+    "deck": "Deck",
+    "draw": "Draw card",
+    "deckEmpty": "Deck empty",
+    "cardsInDeck": "cards in deck",
+    "hoverHint": "Hover a card to pull it to the front",
+    "type": {
+      "creature": "Creature",
+      "spell": "Spell"
+    },
+    "rarity": {
+      "common": "Common",
+      "uncommon": "Uncommon",
+      "rare": "Rare",
+      "legendary": "Legendary"
+    }
+  },
+  "zh": {
+    "title": "霓虹像素法典",
+    "lede": "上方牌堆，下方手牌。悬停卡片即可浮到最前查看。",
+    "deck": "牌堆",
+    "draw": "抽一张牌",
+    "deckEmpty": "牌堆空",
+    "cardsInDeck": "张牌在牌堆",
+    "hoverHint": "悬停卡片查看详情",
+    "type": {
+      "creature": "生物",
+      "spell": "法术"
+    },
+    "rarity": {
+      "common": "普通",
+      "uncommon": "非凡",
+      "rare": "稀有",
+      "legendary": "传说"
+    }
+  }
+}

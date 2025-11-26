@@ -1,5 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { cardPool } from "./cardsData";
+import messages from "./i18n.json";
+
 
 const makeId = (prefix = "id") => `${prefix}-${Math.random().toString(36).slice(2, 7)}`;
 
@@ -97,7 +99,7 @@ function Card({ card, animate, className = "", style = {}, onHighlight, onUnhigh
       <div className="card__shell">
         <div className="card__top">
           <div className="card__name">{card.name}</div>
-          <span className="tag">{card.type}</span>
+          <span className="tag">{card.typeLabel}</span>
         </div>
 
         <div
@@ -113,7 +115,7 @@ function Card({ card, animate, className = "", style = {}, onHighlight, onUnhigh
             <span>{card.cost}</span>
             <span className="pips">{renderPips(card.cost)}</span>
           </div>
-          <span className="rarity">{card.rarity}</span>
+          <span className="rarity">{card.rarityLabel}</span>
         </div>
 
         <div className="card__effect">{card.effect}</div>
@@ -147,6 +149,19 @@ export default function App() {
   const [hand, setHand] = useState([]);
   const [lastDrawnId, setLastDrawnId] = useState(null);
   const [isDrawing, setIsDrawing] = useState(false);
+  const [lang, setLang] = useState("en");
+  const toggleLang = () => setLang((prev) => (prev === "en" ? "zh" : "en"));
+
+  const t = useMemo(
+    () => (key) => {
+      const value = messages[lang]?.[key] ?? messages.en[key];
+      return value ?? key;
+    },
+    [lang]
+  );
+
+  const typeLabel = (type) => messages[lang]?.type?.[type] ?? messages.en.type[type] ?? type;
+  const rarityLabel = (rarity) => messages[lang]?.rarity?.[rarity] ?? messages.en.rarity[rarity] ?? rarity;
 
   useEffect(() => {
     const freshDeck = buildDeck();
@@ -187,13 +202,16 @@ export default function App() {
       <header className="app__header">
         <div>
           <p className="eyebrow">Prototype</p>
-          <h1>Neo Pixel Arcana</h1>
-          <p className="lede">Deck up top, hand below. Hover a card to pull it to the front.</p>
+          <h1>{t("title")}</h1>
+          <p className="lede">{t("lede")}</p>
         </div>
         <div className="controls">
+          <button className="cta cta--ghost" onClick={toggleLang}>
+            {lang === "en" ? "中文" : "EN"}
+          </button>
           <div className="counter pill">
             <span id="deck-count">{deck.length}</span>
-            <small>cards in deck</small>
+            <small>{t("cardsInDeck")}</small>
           </div>
         </div>
       </header>
@@ -208,7 +226,7 @@ export default function App() {
               onClick={drawCard}
               disabled={deck.length === 0 || isDrawing}
             >
-              {deck.length === 0 ? "Deck empty" : isDrawing ? "Drawing..." : "Draw card"}
+              {deck.length === 0 ? t("deckEmpty") : isDrawing ? "..." : t("draw")}
             </button>
           </div>
         </section>
@@ -217,10 +235,17 @@ export default function App() {
           <div className="hand hand--belt" id="hand">
             {hand.map((card, idx) => {
               const fanStyle = getFanStyle(hand.length, idx);
+              const localizedCard = {
+                ...card,
+                name: lang === "zh" && card.nameZh ? card.nameZh : card.name,
+                effect: lang === "zh" && card.effectZh ? card.effectZh : card.effect,
+                typeLabel: typeLabel(card.type),
+                rarityLabel: rarityLabel(card.rarity)
+              };
               return (
                 <Card
                   key={card.instanceId}
-                  card={card}
+                  card={localizedCard}
                   animate={card.instanceId === lastDrawnId}
                   className="card--fan"
                   disableTilt

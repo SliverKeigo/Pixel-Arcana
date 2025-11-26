@@ -2,10 +2,12 @@ export const cardPool = [
   {
     id: "ember-sprite",
     name: "Ember Sprite",
+    nameZh: "余烬精灵",
     type: "creature",
     cost: 2,
     rarity: "uncommon",
     effect: "When Ember Sprite attacks, deal 1 to any target. If it dies, leave a cinder token.",
+    effectZh: "攻击时，对任意目标造成1点伤害。死亡时留下一枚余烬。",
     accent: "#ff9f43",
     accentGradient: "linear-gradient(140deg, rgba(255, 159, 67, 0.28), rgba(255, 107, 107, 0.22))",
     art: "/art/ember-sprite.svg"
@@ -13,10 +15,12 @@ export const cardPool = [
   {
     id: "frost-nova",
     name: "Frost Nova",
+    nameZh: "霜冻新星",
     type: "spell",
     cost: 3,
     rarity: "rare",
     effect: "Freeze all enemy creatures this turn. Draw a card.",
+    effectZh: "本回合冰冻所有敌方生物。抓一张牌。",
     accent: "#9bf4ff",
     accentGradient: "linear-gradient(140deg, rgba(155, 244, 255, 0.28), rgba(126, 216, 255, 0.22))",
     art: "/art/frost-nova.svg"
@@ -24,10 +28,12 @@ export const cardPool = [
   {
     id: "arcane-tome",
     name: "Arcane Tome",
+    nameZh: "奥术法典",
     type: "spell",
     cost: 2,
     rarity: "uncommon",
     effect: "Discover a spell: look at the top 3 cards, take a spell, bottom the rest.",
+    effectZh: "探寻一张法术：检视牌库顶3张，取一张法术，其余置底。",
     accent: "#bba8ff",
     accentGradient: "linear-gradient(140deg, rgba(187, 168, 255, 0.32), rgba(124, 91, 255, 0.24))",
     art: "/art/arcane-tome.svg"
@@ -35,10 +41,12 @@ export const cardPool = [
   {
     id: "cyber-falcon",
     name: "Cyber Falcon",
+    nameZh: "赛博隼",
     type: "creature",
     cost: 2,
     rarity: "common",
     effect: "Flying. When it enters, give another ally +1 speed this turn.",
+    effectZh: "飞行。进场时使另一名友方本回合获得+1速度。",
     accent: "#7ed8ff",
     accentGradient: "linear-gradient(140deg, rgba(126, 216, 255, 0.26), rgba(77, 225, 255, 0.22))",
     art: "/art/cyber-falcon.svg"
@@ -46,10 +54,12 @@ export const cardPool = [
   {
     id: "slime-bloom",
     name: "Slime Bloom",
+    nameZh: "史莱姆绽放",
     type: "creature",
     cost: 1,
     rarity: "common",
     effect: "Ooze. When it dies, create two 1/1 slimes.",
+    effectZh: "软泥。死亡时生成两个1/1史莱姆。",
     accent: "#7af28b",
     accentGradient: "linear-gradient(140deg, rgba(122, 242, 139, 0.3), rgba(77, 225, 166, 0.22))",
     art: "/art/slime-bloom.svg"
@@ -57,10 +67,12 @@ export const cardPool = [
   {
     id: "crystal-surge",
     name: "Crystal Surge",
+    nameZh: "水晶涌动",
     type: "spell",
     cost: 3,
     rarity: "rare",
     effect: "Gain 2 mana this turn. Your next spell this turn costs 2 less.",
+    effectZh: "本回合获得2点法力。本回合你下一个法术费用减少2。",
     accent: "#9bf4ff",
     accentGradient: "linear-gradient(140deg, rgba(155, 244, 255, 0.28), rgba(77, 225, 255, 0.22))",
     art: "/art/crystal-surge.svg"
@@ -68,10 +80,12 @@ export const cardPool = [
   {
     id: "mech-golem",
     name: "Mech Golem",
+    nameZh: "机铸巨像",
     type: "creature",
     cost: 4,
     rarity: "rare",
     effect: "Armor 2. When it blocks, gain 1 armor this turn.",
+    effectZh: "护甲2。阻挡时本回合再获得1点护甲。",
     accent: "#c4c8ff",
     accentGradient: "linear-gradient(140deg, rgba(196, 200, 255, 0.32), rgba(120, 150, 255, 0.22))",
     art: "/art/mech-golem.svg"
@@ -79,10 +93,12 @@ export const cardPool = [
   {
     id: "void-pulse",
     name: "Void Pulse",
+    nameZh: "虚空脉冲",
     type: "spell",
     cost: 2,
     rarity: "uncommon",
     effect: "Deal 2 to any target. If it dies, exile it.",
+    effectZh: "对任意目标造成2点伤害；若其死亡，则将其放逐。",
     accent: "#9c7bff",
     accentGradient: "linear-gradient(140deg, rgba(156, 123, 255, 0.3), rgba(79, 155, 255, 0.24))",
     art: "/art/void-pulse.svg"
@@ -90,10 +106,12 @@ export const cardPool = [
   {
     id: "wind-shuriken",
     name: "Wind Shuriken",
+    nameZh: "风刃手里剑",
     type: "spell",
     cost: 1,
     rarity: "common",
     effect: "Deal 1 to two different targets.",
+    effectZh: "对两个不同目标各造成1点伤害。",
     accent: "#7ed8ff",
     accentGradient: "linear-gradient(140deg, rgba(126, 216, 255, 0.26), rgba(77, 225, 255, 0.2))",
     art: "/art/wind-shuriken.svg"
@@ -101,10 +119,12 @@ export const cardPool = [
   {
     id: "forest-warden",
     name: "Forest Warden",
+    nameZh: "森语守卫",
     type: "creature",
     cost: 3,
     rarity: "uncommon",
     effect: "Guard. When it enters, heal 2 to another ally.",
+    effectZh: "守护。进场时为另一名友方恢复2点生命。",
     accent: "#78d27a",
     accentGradient: "linear-gradient(140deg, rgba(120, 210, 122, 0.3), rgba(77, 225, 166, 0.2))",
     art: "/art/forest-warden.svg"
@@ -112,10 +132,12 @@ export const cardPool = [
   {
     id: "aurora-veil",
     name: "Aurora Veil",
+    nameZh: "极光之幕",
     type: "spell",
     cost: 2,
     rarity: "rare",
     effect: "Give a creature +0/+3 and hexproof this turn.",
+    effectZh: "使一名生物本回合获得+0/+3与法术护盾。",
     accent: "#9bf4ff",
     accentGradient: "linear-gradient(140deg, rgba(155, 244, 255, 0.28), rgba(187, 168, 255, 0.24))",
     art: "/art/aurora-veil.svg"
@@ -123,10 +145,12 @@ export const cardPool = [
   {
     id: "starlit-cascade",
     name: "Starlit Cascade",
+    nameZh: "星瀑净涤",
     type: "spell",
     cost: 3,
     rarity: "rare",
     effect: "Heal 4 to an ally and scry 2. If you control a spell, draw a card.",
+    effectZh: "为一名友方恢复4点并占卜2；若你控制另一张法术，再抓一张牌。",
     accent: "#7ad0ff",
     accentGradient: "linear-gradient(140deg, rgba(122, 208, 255, 0.3), rgba(99, 255, 210, 0.24))",
     art: "/art/water-experiment.png"
@@ -134,10 +158,12 @@ export const cardPool = [
   {
     id: "event-horizon",
     name: "Event Horizon",
+    nameZh: "视界终点",
     type: "spell",
     cost: 4,
     rarity: "legendary",
     effect: "Exile a creature. If you control another spell, exile two instead.",
+    effectZh: "放逐一个生物；若你控制另一张法术，则改为放逐两个。",
     accent: "#ff8ad8",
     accentGradient: "linear-gradient(140deg, rgba(255, 138, 216, 0.32), rgba(255, 184, 108, 0.26))",
     art: "/art/space.png"

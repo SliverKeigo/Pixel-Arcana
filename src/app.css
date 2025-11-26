@@ -110,6 +110,14 @@ h1 {
   box-shadow: 0 6px 20px rgba(79, 155, 255, 0.36);
 }
 
+.cta--ghost {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: var(--text);
+  box-shadow: none;
+  padding-inline: 14px;
+}
+
 .counter {
   display: grid;
   place-items: center;
