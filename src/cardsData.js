@@ -26,19 +26,6 @@ export const cardPool = [
     art: "/art/frost-nova.svg"
   },
   {
-    id: "arcane-tome",
-    name: "Arcane Tome",
-    nameZh: "奥术法典",
-    type: "spell",
-    cost: 2,
-    rarity: "uncommon",
-    effect: "Discover a spell: look at the top 3 cards, take a spell, bottom the rest.",
-    effectZh: "探寻一张法术：检视牌库顶3张，取一张法术，其余置底。",
-    accent: "#bba8ff",
-    accentGradient: "linear-gradient(140deg, rgba(187, 168, 255, 0.32), rgba(124, 91, 255, 0.24))",
-    art: "/art/arcane-tome.svg"
-  },
-  {
     id: "cyber-falcon",
     name: "Cyber Falcon",
     nameZh: "赛博隼",
@@ -104,19 +91,6 @@ export const cardPool = [
     art: "/art/void-pulse.svg"
   },
   {
-    id: "wind-shuriken",
-    name: "Wind Shuriken",
-    nameZh: "风刃手里剑",
-    type: "spell",
-    cost: 1,
-    rarity: "common",
-    effect: "Deal 1 to two different targets.",
-    effectZh: "对两个不同目标各造成1点伤害。",
-    accent: "#7ed8ff",
-    accentGradient: "linear-gradient(140deg, rgba(126, 216, 255, 0.26), rgba(77, 225, 255, 0.2))",
-    art: "/art/wind-shuriken.svg"
-  },
-  {
     id: "forest-warden",
     name: "Forest Warden",
     nameZh: "森语守卫",
@@ -130,17 +104,17 @@ export const cardPool = [
     art: "/art/forest-warden.svg"
   },
   {
-    id: "aurora-veil",
-    name: "Aurora Veil",
-    nameZh: "极光之幕",
+    id: "rascal-rift",
+    name: "Rascal Rift",
+    nameZh: "淘气裂隙",
     type: "spell",
-    cost: 2,
-    rarity: "rare",
-    effect: "Give a creature +0/+3 and hexproof this turn.",
-    effectZh: "使一名生物本回合获得+0/+3与法术护盾。",
-    accent: "#9bf4ff",
-    accentGradient: "linear-gradient(140deg, rgba(155, 244, 255, 0.28), rgba(187, 168, 255, 0.24))",
-    art: "/art/aurora-veil.svg"
+    cost: 5,
+    rarity: "legendary",
+    effect: "Exile up to two enemy creatures. If you control another spell, draw 2 after exiling.",
+    effectZh: "放逐至多两个敌方生物；若你控制另一张法术，放逐后抓2张牌。",
+    accent: "#ff5ae0",
+    accentGradient: "linear-gradient(140deg, rgba(255, 90, 224, 0.4), rgba(155, 244, 255, 0.3))",
+    art: "/art/rascal.gif"
   },
   {
     id: "starlit-cascade",
