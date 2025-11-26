@@ -228,6 +228,8 @@ h1 {
   background: linear-gradient(160deg, rgba(255, 255, 255, 0.03), rgba(0, 0, 0, 0.28));
   box-shadow: 0 14px 38px rgba(0, 0, 0, 0.4);
   min-height: 240px;
+  position: relative;
+  z-index: 2;
 }
 
 .table-top--deck-only {
@@ -247,6 +249,8 @@ h1 {
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
   display: flex;
   justify-content: center;
+  position: relative;
+  z-index: 1;
 }
 
 .hand--belt {
@@ -575,7 +579,7 @@ h1 {
   left: 50%;
   transform-origin: 50% 100%;
   transform: translateX(-50%) translateX(var(--fan-translate-x, 0px)) translateY(var(--fan-translate-y, 0px))
-    rotate(var(--fan-rotate, 0deg));
+    rotate(var(--fan-rotate, 0deg)) scale(var(--fan-scale, 1));
   z-index: var(--fan-z, 1);
   transition: transform 220ms ease, filter 220ms ease, z-index 0ms;
   will-change: transform;
@@ -584,7 +588,7 @@ h1 {
 .card--fan:hover,
 .card--fan:focus-visible {
   transform: translateX(-50%) translateX(var(--fan-translate-x, 0px)) translateY(calc(var(--fan-translate-y, 0px) - 16px))
-    scale(1.05) rotate(var(--fan-rotate, 0deg));
+    scale(calc(var(--fan-scale, 1) * 1.05)) rotate(var(--fan-rotate, 0deg));
   z-index: 99999;
 }
 
@@ -625,11 +629,75 @@ h1 {
     grid-template-columns: 1fr;
   }
 
-  .preview-pane {
-    min-height: 280px;
+  .controls {
+    flex-wrap: wrap;
+    justify-content: flex-start;
   }
 
-  .hand {
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  .hand-belt {
+    padding: 12px;
+  }
+
+  .hand--belt {
+    min-height: 360px;
+  }
+}
+
+@media (max-width: 720px) {
+  :root {
+    --card-width: 180px;
+    --card-height: 260px;
+  }
+
+  .app {
+    padding: 20px 14px 40px;
+  }
+
+  .app__header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .table-top {
+    padding: 16px;
+    min-height: 200px;
+  }
+
+  .deck-column--solo {
+    width: 100%;
+  }
+
+  .deck-stack {
+    width: 90px;
+    height: 130px;
+  }
+
+  .hand-belt {
+    margin-top: 6px;
+    padding: 10px;
+  }
+
+  .hand--belt {
+    min-height: 300px;
+  }
+
+  .card {
+    padding: 10px;
+  }
+
+  .card__shell {
+    padding: 10px;
+  }
+
+  .card__name {
+    font-size: 13px;
+  }
+
+  .card__art {
+    height: 120px;
+  }
+
+  .card__effect {
+    font-size: 13px;
   }
 }

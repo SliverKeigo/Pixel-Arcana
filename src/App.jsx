@@ -149,7 +149,7 @@ export default function App() {
   const [hand, setHand] = useState([]);
   const [lastDrawnId, setLastDrawnId] = useState(null);
   const [isDrawing, setIsDrawing] = useState(false);
-  const [lang, setLang] = useState("en");
+  const [lang, setLang] = useState("zh");
   const toggleLang = () => setLang((prev) => (prev === "en" ? "zh" : "en"));
 
   const t = useMemo(
@@ -184,16 +184,20 @@ export default function App() {
     if (count <= 1) {
       return { transform: "translateX(0px) translateY(0px) rotate(0deg)", zIndex: 20 };
     }
-    const spread = Math.min(30, (80 / (count - 1)) * 1.6); // gentler spread
+    const isNarrow = typeof window !== "undefined" && window.innerWidth <= 720;
+    const spread = Math.min(26, (70 / (count - 1)) * 1.6); // tighten when more cards
     const center = (count - 1) / 2;
-    const angle = (index - center) * spread * 0.6;
-    const offsetX = (index - center) * 40;
-    const offsetY = -Math.abs(index - center) * 8;
+    const baseScale = count > 6 ? Math.max(0.55, 6 / count) : 1;
+    const scale = isNarrow ? Math.min(0.7, baseScale) : baseScale;
+    const angle = (index - center) * spread * (isNarrow ? 0.45 : 0.55);
+    const offsetX = (index - center) * (isNarrow ? 28 : 40) * scale;
+    const offsetY = -Math.abs(index - center) * 6 * scale;
     return {
       translateX: `${offsetX}px`,
       translateY: `${offsetY}px`,
       rotate: `${angle}deg`,
-      zIndex: 100 + index
+      zIndex: 100 + index,
+      scale
     };
   };
 
@@ -253,7 +257,8 @@ export default function App() {
                     "--fan-translate-x": fanStyle.translateX,
                     "--fan-translate-y": fanStyle.translateY,
                     "--fan-rotate": fanStyle.rotate,
-                    "--fan-z": fanStyle.zIndex
+                    "--fan-z": fanStyle.zIndex,
+                    "--fan-scale": fanStyle.scale
                   }}
                 />
               );
